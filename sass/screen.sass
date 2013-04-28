@@ -5,14 +5,16 @@
 body
   background-color: #efe8dd
   @include background(linear-gradient(color-stops(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd)))
+  overflow: hidden
 
 .container
   width: 960px
   height: 500px
   position: relative
-  margin: 50px auto 0 auto
+  margin: 20px auto 0 auto
   @include perspective(2600px)
   @include perspective-origin(50% -1400px)
+  @include transform(scale(1.5))
 
 .stage
   width: 460px
@@ -20,43 +22,63 @@ body
   @include transform-style(preserve-3d)
   @include transform(rotateY(-45deg))
 
-  /* background: url(../images/portal.png) no-repeat
+  div
+    position: absolute
+    @include transform-style(preserve-3d)
+
+  .shadow
+    width: 550px
+    height: 550px
+    background-color: transparent
+    @include transform(rotateX(90deg) translateZ(-166px) translateX(550px))
+    @include box-shadow(-600px 0 50px #afa79f)
 
   .back-left
     width: 500px
     height: 120px
-    position: absolute
     background-color: #6b522b
-    @include transform-style(preserve-3d)
     @include transform(rotateY(90deg) translateX(-256px))
     border-top: 6px solid #8a683d
     border-left: 6px solid #574625
 
   .back-right
-    width: 450px
+    width: 446px
     height: 120px
-    position: absolute
-    top: -1px
     background-color: #9c7442
-    @include transform-style(preserve-3d)
-    @include transform(rotateY(0) translateX(254px) translateZ(4px))
+    @include transform(translateX(253px) translateZ(3px))
     border-top: 6px solid #b5854a
     border-right: 6px solid #78552c
 
   .platform-left
-    width: 460px
-    height: 180px
-    position: absolute
+    width: 446px
+    height: 220px
     background-color: #bcb3a8
-    @include transform-style(preserve-3d)
-    @include transform(rotateX(90deg) translateY(378px) translateX(241px) translateZ(-41px))
+    @include transform(rotateX(90deg) translateY(396px) translateX(253px) translateZ(-13px))
+    border-bottom: 6px solid #857964
 
   .platform-right
-    width: 460px
-    height: 140px
-    position: absolute
+    width: 446px
+    height: 164px
     background-color: #bcb3a8
-    @include transform-style(preserve-3d)
-    @include transform(rotateX(90deg) translateY(73px) translateX(244px) translateZ(-56px))
+    @include transform(rotateX(90deg) translateY(88px) translateX(253px) translateZ(-41px))
     border-right: 6px solid #554c3d
+    border-bottom: 6px solid #847660
+
+  .pit-left
+    width: 447px
+    height: 2500px
+    background-color: #4d4233
+    @include transform(translate3D(254px, 125px, 285px))
+
+  .pit-right
+    width: 451px
+    height: 2500px
+    background-color: #847660
+    @include transform(translate3D(254px, 125px, 173px))
+
+  .pit-back
+    width: 170px
+    height: 220px
+    background-color: #6b522b
+    @include transform(rotateY(90deg) translate3D(-195px, 87px, 105px))
 
