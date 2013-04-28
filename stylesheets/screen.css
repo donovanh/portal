@@ -1,0 +1,184 @@
+/* line 17, ../../../../.rvm/gems/ruby-1.9.2-p320/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-1.9.2-p320/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-1.9.2-p320/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rvm/gems/ruby-1.9.2-p320/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rvm/gems/ruby-1.9.2-p320/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rvm/gems/ruby-1.9.2-p320/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rvm/gems/ruby-1.9.2-p320/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rvm/gems/ruby-1.9.2-p320/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rvm/gems/ruby-1.9.2-p320/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* Mixins to extend what Compass provides */
+/* line 5, ../sass/screen.sass */
+body {
+  background-color: #efe8dd;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ced5d3), color-stop(144px, #ced5d3), color-stop(144px, #efe8dd), color-stop(100%, #efe8dd));
+  background: -webkit-linear-gradient(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd);
+  background: -moz-linear-gradient(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd);
+  background: -o-linear-gradient(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd);
+  background: linear-gradient(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd);
+}
+
+/* line 9, ../sass/screen.sass */
+.container {
+  width: 960px;
+  height: 500px;
+  position: relative;
+  margin: 50px auto 0 auto;
+  -webkit-perspective: 2600px;
+  -moz-perspective: 2600px;
+  -ms-perspective: 2600px;
+  -o-perspective: 2600px;
+  perspective: 2600px;
+  -webkit-perspective-origin: 50% -1400px;
+  -moz-perspective-origin: 50% -1400px;
+  -ms-perspective-origin: 50% -1400px;
+  -o-perspective-origin: 50% -1400px;
+  perspective-origin: 50% -1400px;
+}
+
+/* line 17, ../sass/screen.sass */
+.stage {
+  width: 460px;
+  margin: 0 auto;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(-45deg);
+  -moz-transform: rotateY(-45deg);
+  -ms-transform: rotateY(-45deg);
+  -o-transform: rotateY(-45deg);
+  transform: rotateY(-45deg);
+  /* background: url(../images/portal.png) no-repeat */
+}
+/* line 25, ../sass/screen.sass */
+.stage .back-left {
+  width: 500px;
+  height: 120px;
+  position: absolute;
+  background-color: #6b522b;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(90deg) translateX(-256px);
+  -moz-transform: rotateY(90deg) translateX(-256px);
+  -ms-transform: rotateY(90deg) translateX(-256px);
+  -o-transform: rotateY(90deg) translateX(-256px);
+  transform: rotateY(90deg) translateX(-256px);
+  border-top: 6px solid #8a683d;
+  border-left: 6px solid #574625;
+}
+/* line 35, ../sass/screen.sass */
+.stage .back-right {
+  width: 450px;
+  height: 120px;
+  position: absolute;
+  top: -1px;
+  background-color: #9c7442;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(0) translateX(254px) translateZ(4px);
+  -moz-transform: rotateY(0) translateX(254px) translateZ(4px);
+  -ms-transform: rotateY(0) translateX(254px) translateZ(4px);
+  -o-transform: rotateY(0) translateX(254px) translateZ(4px);
+  transform: rotateY(0) translateX(254px) translateZ(4px);
+  border-top: 6px solid #b5854a;
+  border-right: 6px solid #78552c;
+}
+/* line 46, ../sass/screen.sass */
+.stage .platform-left {
+  width: 460px;
+  height: 180px;
+  position: absolute;
+  background-color: #bcb3a8;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateX(90deg) translateY(378px) translateX(241px) translateZ(-41px);
+  -moz-transform: rotateX(90deg) translateY(378px) translateX(241px) translateZ(-41px);
+  -ms-transform: rotateX(90deg) translateY(378px) translateX(241px) translateZ(-41px);
+  -o-transform: rotateX(90deg) translateY(378px) translateX(241px) translateZ(-41px);
+  transform: rotateX(90deg) translateY(378px) translateX(241px) translateZ(-41px);
+}
+/* line 54, ../sass/screen.sass */
+.stage .platform-right {
+  width: 460px;
+  height: 140px;
+  position: absolute;
+  background-color: #bcb3a8;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateX(90deg) translateY(73px) translateX(244px) translateZ(-56px);
+  -moz-transform: rotateX(90deg) translateY(73px) translateX(244px) translateZ(-56px);
+  -ms-transform: rotateX(90deg) translateY(73px) translateX(244px) translateZ(-56px);
+  -o-transform: rotateX(90deg) translateY(73px) translateX(244px) translateZ(-56px);
+  transform: rotateX(90deg) translateY(73px) translateX(244px) translateZ(-56px);
+  border-right: 6px solid #554c3d;
+}
