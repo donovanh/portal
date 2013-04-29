@@ -73,14 +73,19 @@ body {
   background: -o-linear-gradient(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd);
   background: linear-gradient(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd);
   overflow: hidden;
+  -webkit-transform: scale(1.333);
+  -moz-transform: scale(1.333);
+  -ms-transform: scale(1.333);
+  -o-transform: scale(1.333);
+  transform: scale(1.333);
 }
 
-/* line 10, ../sass/screen.sass */
+/* line 11, ../sass/screen.sass */
 .container {
   width: 960px;
   height: 500px;
   position: relative;
-  margin: 20px auto 0 auto;
+  margin: 80px auto 0 auto;
   -webkit-perspective: 2600px;
   -moz-perspective: 2600px;
   -ms-perspective: 2600px;
@@ -91,11 +96,6 @@ body {
   -ms-perspective-origin: 50% -1400px;
   -o-perspective-origin: 50% -1400px;
   perspective-origin: 50% -1400px;
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  transform: scale(1.5);
 }
 
 /* line 19, ../sass/screen.sass */
@@ -175,6 +175,19 @@ body {
   border-bottom: 6px solid #857964;
 }
 /* line 59, ../sass/screen.sass */
+.stage .platform-left span {
+  display: block;
+  position: absolute;
+  width: 120px;
+  height: 200px;
+  left: 0;
+  background: -webkit-gradient(radial, 0% 50%, 0, 0% 50%, 90, color-stop(0%, #f3cac8), color-stop(77.77778%, #c8b8ad), color-stop(100%, #bcb3a8));
+  background: -webkit-radial-gradient(left, #f3cac8, #c8b8ad 70px, #bcb3a8 90px);
+  background: -moz-radial-gradient(left, #f3cac8, #c8b8ad 70px, #bcb3a8 90px);
+  background: -o-radial-gradient(left, #f3cac8, #c8b8ad 70px, #bcb3a8 90px);
+  background: radial-gradient(left, #f3cac8, #c8b8ad 70px, #bcb3a8 90px);
+}
+/* line 67, ../sass/screen.sass */
 .stage .platform-right {
   width: 446px;
   height: 164px;
@@ -187,7 +200,20 @@ body {
   border-right: 6px solid #554c3d;
   border-bottom: 6px solid #847660;
 }
-/* line 67, ../sass/screen.sass */
+/* line 75, ../sass/screen.sass */
+.stage .platform-right span {
+  display: block;
+  position: absolute;
+  width: 150px;
+  height: 60px;
+  left: 280px;
+  background: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 60, color-stop(0%, #cdebe8), color-stop(66.66667%, #c2cbc1), color-stop(100%, #bcb3a8));
+  background: -webkit-radial-gradient(top, #cdebe8, #c2cbc1 40px, #bcb3a8 60px);
+  background: -moz-radial-gradient(top, #cdebe8, #c2cbc1 40px, #bcb3a8 60px);
+  background: -o-radial-gradient(top, #cdebe8, #c2cbc1 40px, #bcb3a8 60px);
+  background: radial-gradient(top, #cdebe8, #c2cbc1 40px, #bcb3a8 60px);
+}
+/* line 83, ../sass/screen.sass */
 .stage .pit-left {
   width: 447px;
   height: 2500px;
@@ -198,7 +224,7 @@ body {
   -o-transform: translate3D(254px, 125px, 285px);
   transform: translate3D(254px, 125px, 285px);
 }
-/* line 73, ../sass/screen.sass */
+/* line 89, ../sass/screen.sass */
 .stage .pit-right {
   width: 451px;
   height: 2500px;
@@ -209,7 +235,7 @@ body {
   -o-transform: translate3D(254px, 125px, 173px);
   transform: translate3D(254px, 125px, 173px);
 }
-/* line 79, ../sass/screen.sass */
+/* line 95, ../sass/screen.sass */
 .stage .pit-back {
   width: 170px;
   height: 220px;
@@ -219,4 +245,68 @@ body {
   -ms-transform: rotateY(90deg) translate3D(-195px, 87px, 105px);
   -o-transform: rotateY(90deg) translate3D(-195px, 87px, 105px);
   transform: rotateY(90deg) translate3D(-195px, 87px, 105px);
+}
+/* line 101, ../sass/screen.sass */
+.stage .door {
+  width: 65px;
+  height: 85px;
+  background: #efe8dd;
+  border-bottom: 6px solid #bcb3a8;
+  border-left: 7px solid #78552e;
+  -webkit-transform: translate3D(450px, 34px, 4px);
+  -moz-transform: translate3D(450px, 34px, 4px);
+  -ms-transform: translate3D(450px, 34px, 4px);
+  -o-transform: translate3D(450px, 34px, 4px);
+  transform: translate3D(450px, 34px, 4px);
+}
+/* line 109, ../sass/screen.sass */
+.stage .portal {
+  width: 48px;
+  height: 72px;
+  background-color: black;
+  -webkit-border-radius: 44px/62px;
+  border-radius: 44px/62px;
+  -webkit-box-shadow: 0 0 15px 4px white;
+  -moz-box-shadow: 0 0 15px 4px white;
+  box-shadow: 0 0 15px 4px white;
+}
+/* line 117, ../sass/screen.sass */
+.stage .portal:before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 72px;
+  border: 4px solid white;
+  -webkit-border-radius: 44px/62px;
+  border-radius: 44px/62px;
+  margin-top: -4px;
+  margin-left: -4px;
+}
+/* line 128, ../sass/screen.sass */
+.stage .portal.red {
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 70, color-stop(0%, #000000), color-stop(50%, #000000), color-stop(70%, #ff4640));
+  background: -webkit-radial-gradient(#000000, #000000 50%, #ff4640 70%);
+  background: -moz-radial-gradient(#000000, #000000 50%, #ff4640 70%);
+  background: -o-radial-gradient(#000000, #000000 50%, #ff4640 70%);
+  background: radial-gradient(#000000, #000000 50%, #ff4640 70%);
+  border: 7px solid #ff4640;
+  -webkit-transform: translate3D(222px, 30px, 385px) rotateY(90deg) skewX(5deg);
+  -moz-transform: translate3D(222px, 30px, 385px) rotateY(90deg) skewX(5deg);
+  -ms-transform: translate3D(222px, 30px, 385px) rotateY(90deg) skewX(5deg);
+  -o-transform: translate3D(222px, 30px, 385px) rotateY(90deg) skewX(5deg);
+  transform: translate3D(222px, 30px, 385px) rotateY(90deg) skewX(5deg);
+}
+/* line 133, ../sass/screen.sass */
+.stage .portal.blue {
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 70, color-stop(0%, #000000), color-stop(50%, #000000), color-stop(70%, #258aff));
+  background: -webkit-radial-gradient(#000000, #000000 50%, #258aff 70%);
+  background: -moz-radial-gradient(#000000, #000000 50%, #258aff 70%);
+  background: -o-radial-gradient(#000000, #000000 50%, #258aff 70%);
+  background: radial-gradient(#000000, #000000 50%, #258aff 70%);
+  border: 7px solid #258aff;
+  -webkit-transform: translate3D(586px, 25px, 10px) skewX(-5deg);
+  -moz-transform: translate3D(586px, 25px, 10px) skewX(-5deg);
+  -ms-transform: translate3D(586px, 25px, 10px) skewX(-5deg);
+  -o-transform: translate3D(586px, 25px, 10px) skewX(-5deg);
+  transform: translate3D(586px, 25px, 10px) skewX(-5deg);
 }
