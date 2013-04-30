@@ -96,7 +96,7 @@ body
     width: 170px
     height: 220px
     background-color: #6b522b
-    @include transform(rotateY(90deg) translate3D(-195px, 87px, 105px))
+    @include transform(rotateY(90deg) translate3D(-200px, 87px, 168px))
 
   .door
     width: 65px
@@ -125,14 +125,56 @@ body
       margin-top: -4px
       margin-left: -4px
 
-  .portal.red
-    @include background(radial-gradient(black, black 50%, #ff4640 70%))
-    border: 7px solid #ff4640
-    @include transform(translate3D(222px, 30px, 385px) rotateY(90deg) skewX(5deg))
+    &.red
+      @include background(radial-gradient(black, black 50%, #ff4640 70%))
+      border: 7px solid #ff4640
+      @include transform(translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg))
 
-  .portal.blue
-    @include background(radial-gradient(black, black 50%, #258aff 70%))
-    border: 7px solid #258aff
-    @include transform(translate3D(586px,25px,10px) skewX(-5deg))
+    &.blue
+      @include background(radial-gradient(black, black 50%, #258aff 70%))
+      border: 7px solid #258aff
+      @include transform(translate3D(586px,25px,4px) skewX(-5deg))
+
+  .dude, .dude-shadow
+    width: 30px
+    height: 100px
+    @include transform(translate3D(514px, 50px, 355px) rotateY(76deg))
+
+    figure
+      display: block
+      background-color: #000
+      position: absolute
+
+      &.head
+        top: 0
+        left: 4px
+        width: 22px
+        height: 22px
+        @include border-radius(22px)
+
+      &.body
+        top: 23px
+        width: 30px
+        height: 35px
+        @include border-radius(30px 30px 0 0)
+
+        &:before, &:after
+          content: ""
+          position: absolute
+          width: 10px
+          height: 20px
+          background-color: #000
+          top: 30px
+
+        &:before
+          left: 4px
+
+        &:after
+          left: 16px
+
+  .dude-shadow
+    @include transform(translate3D(511px, 50px, 376px) rotateZ(-90deg) rotateY(-86deg))
+    opacity: 0.1
+
 
 

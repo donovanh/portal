@@ -240,11 +240,11 @@ body {
   width: 170px;
   height: 220px;
   background-color: #6b522b;
-  -webkit-transform: rotateY(90deg) translate3D(-195px, 87px, 105px);
-  -moz-transform: rotateY(90deg) translate3D(-195px, 87px, 105px);
-  -ms-transform: rotateY(90deg) translate3D(-195px, 87px, 105px);
-  -o-transform: rotateY(90deg) translate3D(-195px, 87px, 105px);
-  transform: rotateY(90deg) translate3D(-195px, 87px, 105px);
+  -webkit-transform: rotateY(90deg) translate3D(-200px, 87px, 168px);
+  -moz-transform: rotateY(90deg) translate3D(-200px, 87px, 168px);
+  -ms-transform: rotateY(90deg) translate3D(-200px, 87px, 168px);
+  -o-transform: rotateY(90deg) translate3D(-200px, 87px, 168px);
+  transform: rotateY(90deg) translate3D(-200px, 87px, 168px);
 }
 /* line 101, ../sass/screen.sass */
 .stage .door {
@@ -290,11 +290,11 @@ body {
   background: -o-radial-gradient(#000000, #000000 50%, #ff4640 70%);
   background: radial-gradient(#000000, #000000 50%, #ff4640 70%);
   border: 7px solid #ff4640;
-  -webkit-transform: translate3D(222px, 30px, 385px) rotateY(90deg) skewX(5deg);
-  -moz-transform: translate3D(222px, 30px, 385px) rotateY(90deg) skewX(5deg);
-  -ms-transform: translate3D(222px, 30px, 385px) rotateY(90deg) skewX(5deg);
-  -o-transform: translate3D(222px, 30px, 385px) rotateY(90deg) skewX(5deg);
-  transform: translate3D(222px, 30px, 385px) rotateY(90deg) skewX(5deg);
+  -webkit-transform: translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg);
+  -moz-transform: translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg);
+  -ms-transform: translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg);
+  -o-transform: translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg);
+  transform: translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg);
 }
 /* line 133, ../sass/screen.sass */
 .stage .portal.blue {
@@ -304,9 +304,74 @@ body {
   background: -o-radial-gradient(#000000, #000000 50%, #258aff 70%);
   background: radial-gradient(#000000, #000000 50%, #258aff 70%);
   border: 7px solid #258aff;
-  -webkit-transform: translate3D(586px, 25px, 10px) skewX(-5deg);
-  -moz-transform: translate3D(586px, 25px, 10px) skewX(-5deg);
-  -ms-transform: translate3D(586px, 25px, 10px) skewX(-5deg);
-  -o-transform: translate3D(586px, 25px, 10px) skewX(-5deg);
-  transform: translate3D(586px, 25px, 10px) skewX(-5deg);
+  -webkit-transform: translate3D(586px, 25px, 4px) skewX(-5deg);
+  -moz-transform: translate3D(586px, 25px, 4px) skewX(-5deg);
+  -ms-transform: translate3D(586px, 25px, 4px) skewX(-5deg);
+  -o-transform: translate3D(586px, 25px, 4px) skewX(-5deg);
+  transform: translate3D(586px, 25px, 4px) skewX(-5deg);
+}
+/* line 138, ../sass/screen.sass */
+.stage .dude, .stage .dude-shadow {
+  width: 30px;
+  height: 100px;
+  -webkit-transform: translate3D(514px, 50px, 355px) rotateY(76deg);
+  -moz-transform: translate3D(514px, 50px, 355px) rotateY(76deg);
+  -ms-transform: translate3D(514px, 50px, 355px) rotateY(76deg);
+  -o-transform: translate3D(514px, 50px, 355px) rotateY(76deg);
+  transform: translate3D(514px, 50px, 355px) rotateY(76deg);
+}
+/* line 143, ../sass/screen.sass */
+.stage .dude figure, .stage .dude-shadow figure {
+  display: block;
+  background-color: black;
+  position: absolute;
+}
+/* line 148, ../sass/screen.sass */
+.stage .dude figure.head, .stage .dude-shadow figure.head {
+  top: 0;
+  left: 4px;
+  width: 22px;
+  height: 22px;
+  -webkit-border-radius: 22px;
+  -moz-border-radius: 22px;
+  -ms-border-radius: 22px;
+  -o-border-radius: 22px;
+  border-radius: 22px;
+}
+/* line 155, ../sass/screen.sass */
+.stage .dude figure.body, .stage .dude-shadow figure.body {
+  top: 23px;
+  width: 30px;
+  height: 35px;
+  -webkit-border-radius: 30px 30px 0 0;
+  -moz-border-radius: 30px 30px 0 0;
+  -ms-border-radius: 30px 30px 0 0;
+  -o-border-radius: 30px 30px 0 0;
+  border-radius: 30px 30px 0 0;
+}
+/* line 161, ../sass/screen.sass */
+.stage .dude figure.body:before, .stage .dude figure.body:after, .stage .dude-shadow figure.body:before, .stage .dude-shadow figure.body:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background-color: black;
+  top: 30px;
+}
+/* line 169, ../sass/screen.sass */
+.stage .dude figure.body:before, .stage .dude-shadow figure.body:before {
+  left: 4px;
+}
+/* line 172, ../sass/screen.sass */
+.stage .dude figure.body:after, .stage .dude-shadow figure.body:after {
+  left: 16px;
+}
+/* line 175, ../sass/screen.sass */
+.stage .dude-shadow {
+  -webkit-transform: translate3D(511px, 50px, 376px) rotateZ(-90deg) rotateY(-86deg);
+  -moz-transform: translate3D(511px, 50px, 376px) rotateZ(-90deg) rotateY(-86deg);
+  -ms-transform: translate3D(511px, 50px, 376px) rotateZ(-90deg) rotateY(-86deg);
+  -o-transform: translate3D(511px, 50px, 376px) rotateZ(-90deg) rotateY(-86deg);
+  transform: translate3D(511px, 50px, 376px) rotateZ(-90deg) rotateY(-86deg);
+  opacity: 0.1;
 }
