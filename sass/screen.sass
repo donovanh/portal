@@ -135,10 +135,14 @@ body
       border: 7px solid #258aff
       @include transform(translate3D(586px,25px,4px) skewX(-5deg))
 
+
+  .dude
+    @include animation(move-dude 5s linear infinite)
+
   .dude, .dude-shadow
     width: 30px
     height: 100px
-    @include transform(translate3D(514px, 50px, 355px) rotateY(78deg))
+    @include transform(translate3D(514px, 50px, 375px) rotateY(78deg))
 
     figure
       display: block
@@ -173,8 +177,22 @@ body
           left: 14px
 
   .dude-shadow
-    @include transform(translate3D(511px, 50px, 376px) rotateZ(-90deg) rotateY(-88deg))
+    @include transform(translateX(-12px) rotateX(90deg))
     opacity: 0.1
 
-
+@include keyframes(move-dude)
+  0%
+    @include transform(translate3D(514px, 50px, 375px) rotateY(78deg))
+  46%,52%
+    @include transform(translate3D(264px, 50px, 375px) rotateY(78deg))
+  56%
+    @include transform(translate3D(234px, 40px, 375px) rotateY(78deg))
+    opacity: 1
+  56.01%
+    opacity: 0
+  56.05%
+    @include transform(translate3D(610px, 40px, 10px) rotateY(15deg))
+    opacity: 1
+  64%, 100%
+    @include transform(translate3D(610px, 40px, 120px) rotateY(15deg))
 
