@@ -6,7 +6,6 @@ body
   background-color: #efe8dd
   @include background(linear-gradient(color-stops(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd)))
   overflow: hidden
-  @include transform(scale(1.333))
 
 .container
   width: 960px
@@ -30,8 +29,11 @@ body
     width: 550px
     height: 550px
     background-color: transparent
+    opacity: 0
     @include transform(rotateX(90deg) translateZ(-166px) translateX(550px))
     @include box-shadow(-600px 0 50px #afa79f)
+    @include animation(show-background 1.5s forwards)
+    -webkit-animation-delay: 1s
 
   .back-left
     width: 500px
@@ -40,6 +42,7 @@ body
     @include transform(rotateY(90deg) translateX(-256px))
     border-top: 6px solid #8a683d
     border-left: 6px solid #574625
+    @include animation(show-background 1.6s forwards)
 
   .back-right
     width: 446px
@@ -48,6 +51,9 @@ body
     @include transform(translateX(253px) translateZ(3px))
     border-top: 6px solid #b5854a
     border-right: 6px solid #78552c
+    opacity: 0
+    @include animation(show-background 1.8s forwards)
+    -webkit-animation-delay: 0.5s
 
   .platform-left
     width: 446px
@@ -55,6 +61,9 @@ body
     background-color: #bcb3a8
     @include transform(rotateX(90deg) translateY(396px) translateX(253px) translateZ(-13px))
     border-bottom: 6px solid #857964
+    opacity: 0
+    @include animation(show-background 1.5s forwards)
+    -webkit-animation-delay: 1s
 
     span
       display: block
@@ -62,6 +71,7 @@ body
       width: 120px
       height: 200px
       left: 0
+      opacity: 0
       @include background(radial-gradient(left, #f3cac8, #c8b8ad 70px, #bcb3a8 90px))
 
   .platform-right
@@ -71,6 +81,9 @@ body
     @include transform(rotateX(90deg) translateY(88px) translateX(253px) translateZ(-41px))
     border-right: 6px solid #554c3d
     border-bottom: 6px solid #847660
+    opacity: 0
+    @include animation(show-background 1.6s forwards)
+    -webkit-animation-delay: 1s
 
     span
       display: block
@@ -78,37 +91,49 @@ body
       width: 150px
       height: 60px
       left: 280px
+      opacity: 0
       @include background(radial-gradient(top, #cdebe8, #c2cbc1 40px, #bcb3a8 60px))
 
   .pit-left
     width: 447px
-    height: 2500px
+    height: 800px
+    top: -1400px
     background-color: #4d4233
     @include transform(translate3D(254px, 125px, 285px))
+    @include animation(show-pit 1s forwards)
+    -webkit-animation-delay: 2.5s
 
   .pit-right
     width: 451px
-    height: 2500px
+    height: 800px
+    top: -1400px
     background-color: #847660
     @include transform(translate3D(254px, 125px, 173px))
+    @include animation(show-pit 1s forwards)
+    -webkit-animation-delay: 2.4s
 
   .pit-back
     width: 170px
     height: 220px
     background-color: #6b522b
     @include transform(rotateY(90deg) translate3D(-200px, 87px, 168px))
+    @include animation(show-background 1.6s forwards)
 
   .door
     width: 65px
-    height: 85px
+    height: 0
+    top: 85px
     background: #efe8dd
-    border-bottom: 6px solid #bcb3a8
+    border-bottom: 0 solid #bcb3a8
     border-left: 7px solid #78552e
     @include transform(translate3D(450px, 34px, 4px))
+    @include animation(show-door 1.6s forwards)
+    -webkit-animation-delay: 6s
 
   .portal
     width: 48px
     height: 72px
+    opacity: 0
     background-color: black
     -webkit-border-radius: 44px / 62px
     border-radius: 44px / 62px
@@ -129,15 +154,20 @@ body
       @include background(radial-gradient(black, black 50%, #ff4640 70%))
       border: 7px solid #ff4640
       @include transform(translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg))
+      @include animation(show-red-portal 1s forwards)
+      -webkit-animation-delay: 9s
 
     &.blue
       @include background(radial-gradient(black, black 50%, #258aff 70%))
       border: 7px solid #258aff
       @include transform(translate3D(586px,25px,4px) skewX(-5deg))
-
+      @include animation(show-blue-portal 1s forwards)
+      -webkit-animation-delay: 10s
 
   .dude
-    @include animation(move-dude 5s linear infinite)
+    @include animation(move-dude 18s linear infinite)
+    opacity: 0
+    -webkit-animation-delay: 4s
 
   .dude, .dude-shadow
     width: 30px
@@ -182,17 +212,78 @@ body
 
 @include keyframes(move-dude)
   0%
+    @include transform(translate3D(514px, -10px, 375px) rotateY(78deg) scaleY(2))
+  5%, 12%
+    @include transform(translate3D(514px, 50px, 375px) rotateY(78deg) scaleY(1))
+    opacity: 1
+  13%, 15%
+    @include transform(translate3D(514px, 50px, 375px) rotateY(178deg))
+  17%, 20%
     @include transform(translate3D(514px, 50px, 375px) rotateY(78deg))
-  46%,52%
+  21%, 25%
+    @include transform(translate3D(494px, 50px, 345px) rotateY(178deg))
+  27%, 35%
+    @include transform(translate3D(464px, 50px, 375px) rotateY(78deg))
+  36%, 40%
+    @include transform(translate3D(464px, 50px, 375px) rotateY(178deg))
+  41%, 50%
+    @include transform(translate3D(464px, 50px, 375px) rotateY(178deg))
+  56%,62%
     @include transform(translate3D(264px, 50px, 375px) rotateY(78deg))
-  56%
+  66%
     @include transform(translate3D(234px, 40px, 375px) rotateY(78deg))
     opacity: 1
-  56.01%
+  66.01%
     opacity: 0
-  56.05%
+  66.02%
     @include transform(translate3D(610px, 40px, 10px) rotateY(15deg))
     opacity: 1
-  64%, 100%
+  74%, 100%
     @include transform(translate3D(610px, 40px, 120px) rotateY(15deg))
+
+@include keyframes(show-background)
+  0%
+    top: 800px
+    opacity: 0
+  10%
+    opacity: 1
+  100%
+    top: 0
+    opacity: 1
+
+@include keyframes(show-pit)
+  0%
+    top: -1400px
+  100%
+    top: 0
+
+@include keyframes(show-door)
+  0%
+    height: 0
+    top: 85px
+    border-bottom: 0 solid #bcb3a8
+  5%
+    border-bottom: 6px solid #bcb3a8
+  100%
+    height: 85px
+    top: 0
+    border-bottom: 6px solid #bcb3a8
+
+@include keyframes(show-red-portal)
+  0%
+    @include transform(translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg) scale(0))
+  5%
+    opacity: 1
+  100%
+    @include transform(translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg) scale(1))
+    opacity: 1
+
+@include keyframes(show-blue-portal)
+  0%
+    @include transform(translate3D(586px,25px,4px) skewX(-5deg) scale(0))
+  5%
+    opacity: 1
+  100%
+    @include transform(translate3D(586px,25px,4px) skewX(-5deg) scale(1))
+    opacity: 1
 
