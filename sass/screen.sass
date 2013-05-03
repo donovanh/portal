@@ -232,14 +232,16 @@ body
     @include transform(translate3D(264px, 50px, 375px) rotateY(78deg))
   66%
     @include transform(translate3D(234px, 40px, 375px) rotateY(78deg))
-    opacity: 1
   66.01%
-    opacity: 0
+    display: none
   66.02%
     @include transform(translate3D(610px, 40px, 10px) rotateY(15deg))
-    opacity: 1
+    display: none
+  66.05%
+    display: block
   74%, 100%
     @include transform(translate3D(610px, 40px, 120px) rotateY(15deg))
+    opacity: 1
 
 @include keyframes(show-background)
   0%
