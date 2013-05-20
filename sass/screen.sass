@@ -7,6 +7,11 @@ body
   @include background(linear-gradient(color-stops(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd)))
   overflow: hidden
 
+  .title
+    position: absolute
+    left: 0
+    top: 0
+
 .container
   width: 960px
   height: 500px
@@ -14,6 +19,7 @@ body
   margin: 80px auto 0 auto
   @include perspective(2600px)
   @include perspective-origin(50% -1400px)
+  @include transform(scale(1.3333333))
 
 .stage
   width: 460px
@@ -73,6 +79,8 @@ body
       left: 0
       opacity: 0
       @include background(radial-gradient(left, #f3cac8, #c8b8ad 70px, #bcb3a8 90px))
+      @include animation(show-red-highlight 1s forwards)
+      -webkit-animation-delay: 5s
 
   .platform-right
     width: 446px
@@ -93,6 +101,8 @@ body
       left: 280px
       opacity: 0
       @include background(radial-gradient(top, #cdebe8, #c2cbc1 40px, #bcb3a8 60px))
+      @include animation(show-blue-highlight 1s forwards)
+      -webkit-animation-delay: 6s
 
   .pit-left
     width: 447px
@@ -128,7 +138,7 @@ body
     border-left: 7px solid #78552e
     @include transform(translate3D(450px, 34px, 4px))
     @include animation(show-door 1.6s forwards)
-    -webkit-animation-delay: 6s
+    -webkit-animation-delay: 4s
 
   .portal
     width: 48px
@@ -155,24 +165,18 @@ body
       border: 7px solid #ff4640
       @include transform(translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg))
       @include animation(show-red-portal 1s forwards)
-      -webkit-animation-delay: 9s
+      -webkit-animation-delay: 5s
 
     &.blue
       @include background(radial-gradient(black, black 50%, #258aff 70%))
       border: 7px solid #258aff
       @include transform(translate3D(586px,25px,4px) skewX(-5deg))
       @include animation(show-blue-portal 1s forwards)
-      -webkit-animation-delay: 10s
-
-  .dude
-    @include animation(move-dude 18s linear infinite)
-    opacity: 0
-    -webkit-animation-delay: 4s
+      -webkit-animation-delay: 6s
 
   .dude, .dude-shadow
     width: 30px
     height: 100px
-    @include transform(translate3D(514px, 50px, 375px) rotateY(78deg))
 
     figure
       display: block
@@ -206,42 +210,59 @@ body
         &:after
           left: 14px
 
-  .dude-shadow
+  .dude.one
+    @include animation(move-dude-one 8s linear infinite)
+    opacity: 0
+    -webkit-animation-delay: 8s
+    @include transform(translate3D(514px, 50px, 375px) rotateY(78deg))
+
+  .dude-shadow.one
     @include transform(translateX(-12px) rotateX(90deg))
     opacity: 0.1
 
-@include keyframes(move-dude)
+  .dude.two
+    @include animation(move-dude-two 8s linear infinite)
+    opacity: 0
+    -webkit-animation-delay: 8s
+    @include transform(translate3D(610px, 40px, 10px) rotateY(15deg))
+
+  .dude-shadow.two
+    @include transform(translateX(-2px) rotateZ(-90deg) rotateY(90deg) rotateZ(50deg))
+    opacity: 0.1
+
+@include keyframes(move-dude-one)
   0%
     @include transform(translate3D(514px, -10px, 375px) rotateY(78deg) scaleY(2))
-  5%, 12%
+  1%, 22%
     @include transform(translate3D(514px, 50px, 375px) rotateY(78deg) scaleY(1))
     opacity: 1
-  13%, 15%
-    @include transform(translate3D(514px, 50px, 375px) rotateY(178deg))
-  17%, 20%
-    @include transform(translate3D(514px, 50px, 375px) rotateY(78deg))
-  21%, 25%
-    @include transform(translate3D(494px, 50px, 345px) rotateY(178deg))
-  27%, 35%
-    @include transform(translate3D(464px, 50px, 375px) rotateY(78deg))
-  36%, 40%
-    @include transform(translate3D(464px, 50px, 375px) rotateY(178deg))
-  41%, 50%
-    @include transform(translate3D(464px, 50px, 375px) rotateY(178deg))
-  56%,62%
-    @include transform(translate3D(264px, 50px, 375px) rotateY(78deg))
-  66%
+  45%, 46.5%
+    @include transform(translate3D(284px, 40px, 375px) rotateY(78deg))
+    opacity: 1
+  50%, 99%
     @include transform(translate3D(234px, 40px, 375px) rotateY(78deg))
-  66.01%
-    display: none
-  66.02%
+    opacity: 1
+  100%
+    opacity: 0
+
+@include keyframes(move-dude-two)
+  0%
     @include transform(translate3D(610px, 40px, 10px) rotateY(15deg))
-    display: none
-  66.05%
     display: block
-  74%, 100%
+    opacity: 1
+  6%, 35%
     @include transform(translate3D(610px, 40px, 120px) rotateY(15deg))
     opacity: 1
+  35%, 55%
+    @include transform(translate3D(610px, 40px, 120px) rotateY(15deg))
+    opacity: 1
+  56%, 57%
+    @include transform(translate3D(610px, -10px, 120px) rotateY(15deg) scaleY(2))
+    opacity: 0
+  57%, 100%
+    @include transform(translate3D(610px, -10px, 120px) rotateY(15deg) scaleY(2))
+    opacity: 0
+
 
 @include keyframes(show-background)
   0%
@@ -289,3 +310,14 @@ body
     @include transform(translate3D(586px,25px,4px) skewX(-5deg) scale(1))
     opacity: 1
 
+@include keyframes(show-red-highlight)
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@include keyframes(show-blue-highlight)
+  0%
+    opacity: 0
+  100%
+    opacity: 1
