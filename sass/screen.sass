@@ -4,7 +4,8 @@
 
 body
   background-color: #efe8dd
-  @include background(linear-gradient(color-stops(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd)))
+  @include background(linear-gradient(color-stops(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd 100%)))
+  backround-repeat: no-repeat
   overflow: hidden
   font-family: Helvetica, Arial, Sans-serif
   letter-spacing: 2
@@ -281,39 +282,36 @@ body
     animation-delay: 8s
     @include transform(translate3D(610px, 40px, 10px) rotateY(15deg))
 
+
     figure
 
-      &.head
+      &.arm.left
+        position: absolute
+        width: 20px
+        height: 8px
+        background: #000
+        left: -14px
+        top: 20px
+        @include transform(rotateZ(40deg))
+        opacity: 0
+        @include animation(arms 10s linear infinite)
+        -webkit-animation-delay: 8s
+        -moz-animation-delay: 8s
+        animation-delay: 8s
 
-        &:before
-          content: ''
-          position: absolute
-          width: 20px
-          height: 8px
-          background: #000
-          left: -18px
-          top: 20px
-          @include transform(rotateZ(40deg))
-          opacity: 0
-          @include animation(arms 10s linear infinite)
-          -webkit-animation-delay: 8s
-          -moz-animation-delay: 8s
-          animation-delay: 8s
-
-        &:after
-          content: ''
-          position: absolute
-          width: 20px
-          height: 8px
-          background: #000
-          right: -15px
-          top: 20px
-          @include transform(rotateZ(-40deg))
-          opacity: 0
-          @include animation(arms 10s linear infinite)
-          -webkit-animation-delay: 8s
-          -moz-animation-delay: 8s
-          animation-delay: 8s
+      &.arm.right
+        position: absolute
+        width: 20px
+        height: 8px
+        background: #000
+        right: -12px
+        top: 20px
+        @include transform(rotateZ(-40deg))
+        opacity: 0
+        @include animation(arms 10s linear infinite)
+        -webkit-animation-delay: 8s
+        -moz-animation-delay: 8s
+        animation-delay: 8s
 
   .dude-shadow.two
     @include transform(translateX(-2px) rotateZ(-90deg) rotateY(90deg) rotateZ(50deg))
