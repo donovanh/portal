@@ -6,20 +6,47 @@ body
   background-color: #efe8dd
   @include background(linear-gradient(color-stops(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd)))
   overflow: hidden
+  font-family: Helvetica, Arial, Sans-serif
+  letter-spacing: 2
 
   .title
     position: absolute
     left: 0
-    top: 0
+    top: 12px
+
+    h3
+      padding-bottom: 10px
+      font-size: 14px
+      &:before
+        content: ''
+        position: absolute
+        top: -10px
+        left: 0
+        width: 30px
+        height: 5px
+        background: #000
+    h1
+      font-size: 28px
+      font-weight: bold
+      padding-bottom: 15px
+    h2
+      font-size: 14px
+
+  .info
+    position: absolute
+    text-align: right
+    right: 0
+    top: 12px
+    width: 150px
+    height: 100px
 
 .container
   width: 960px
   height: 500px
   position: relative
-  margin: 80px auto 0 auto
+  margin: 20px auto 0 auto
   @include perspective(2600px)
   @include perspective-origin(50% -1400px)
-  @include transform(scale(1.3333333))
 
 .stage
   width: 460px
@@ -40,6 +67,8 @@ body
     @include box-shadow(-600px 0 50px #afa79f)
     @include animation(show-background 1.5s forwards)
     -webkit-animation-delay: 1s
+    -moz-animation-delay: 1s
+    animation-delay: 1s
 
   .back-left
     width: 500px
@@ -60,6 +89,8 @@ body
     opacity: 0
     @include animation(show-background 1.8s forwards)
     -webkit-animation-delay: 0.5s
+    -moz-animation-delay: 0.5s
+    animation-delay: 0.5s
 
   .platform-left
     width: 446px
@@ -70,6 +101,8 @@ body
     opacity: 0
     @include animation(show-background 1.5s forwards)
     -webkit-animation-delay: 1s
+    -moz-animation-delay: 1s
+    animation-delay: 1s
 
     span
       display: block
@@ -81,6 +114,9 @@ body
       @include background(radial-gradient(left, #f3cac8, #c8b8ad 70px, #bcb3a8 90px))
       @include animation(show-red-highlight 1s forwards)
       -webkit-animation-delay: 5s
+      -moz-animation-delay: 5s
+      animation-delay: 5s
+      z-index: 10
 
   .platform-right
     width: 446px
@@ -92,6 +128,8 @@ body
     opacity: 0
     @include animation(show-background 1.6s forwards)
     -webkit-animation-delay: 1s
+    -moz-animation-delay: 1s
+    animation-delay: 1s
 
     span
       display: block
@@ -103,6 +141,8 @@ body
       @include background(radial-gradient(top, #cdebe8, #c2cbc1 40px, #bcb3a8 60px))
       @include animation(show-blue-highlight 1s forwards)
       -webkit-animation-delay: 6s
+      -moz-animation-delay: 6s
+      animation-delay: 6s
 
   .pit-left
     width: 447px
@@ -112,6 +152,8 @@ body
     @include transform(translate3D(254px, 125px, 285px))
     @include animation(show-pit 1s forwards)
     -webkit-animation-delay: 2.5s
+    -moz-animation-delay: 2.5s
+    animation-delay: 2.5s
 
   .pit-right
     width: 451px
@@ -121,6 +163,8 @@ body
     @include transform(translate3D(254px, 125px, 173px))
     @include animation(show-pit 1s forwards)
     -webkit-animation-delay: 2.4s
+    -moz-animation-delay: 2.4s
+    animation-delay: 2.4s
 
   .pit-back
     width: 170px
@@ -139,6 +183,8 @@ body
     @include transform(translate3D(450px, 34px, 4px))
     @include animation(show-door 1.6s forwards)
     -webkit-animation-delay: 4s
+    -moz-animation-delay: 4s
+    animation-delay: 4s
 
   .portal
     width: 48px
@@ -166,6 +212,8 @@ body
       @include transform(translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg))
       @include animation(show-red-portal 1s forwards)
       -webkit-animation-delay: 5s
+      -moz-animation-delay: 5s
+      animation-delay: 5s
 
     &.blue
       @include background(radial-gradient(black, black 50%, #258aff 70%))
@@ -173,6 +221,8 @@ body
       @include transform(translate3D(586px,25px,4px) skewX(-5deg))
       @include animation(show-blue-portal 1s forwards)
       -webkit-animation-delay: 6s
+      -moz-animation-delay: 6s
+      animation-delay: 6s
 
   .dude, .dude-shadow
     width: 30px
@@ -211,9 +261,11 @@ body
           left: 14px
 
   .dude.one
-    @include animation(move-dude-one 8s linear infinite)
+    @include animation(move-dude-one 10s linear infinite)
     opacity: 0
     -webkit-animation-delay: 8s
+    -moz-animation-delay: 8s
+    animation-delay: 8s
     @include transform(translate3D(514px, 50px, 375px) rotateY(78deg))
 
   .dude-shadow.one
@@ -221,10 +273,46 @@ body
     opacity: 0.1
 
   .dude.two
-    @include animation(move-dude-two 8s linear infinite)
+    @include animation(move-dude-two 10s linear infinite)
     opacity: 0
     -webkit-animation-delay: 8s
+    -moz-animation-delay: 8s
+    animation-delay: 8s
     @include transform(translate3D(610px, 40px, 10px) rotateY(15deg))
+
+    figure
+
+      &.head
+
+        &:before
+          content: ''
+          position: absolute
+          width: 20px
+          height: 8px
+          background: #000
+          left: -18px
+          top: 20px
+          @include transform(rotateZ(40deg))
+          opacity: 0
+          @include animation(arms 10s linear infinite)
+          -webkit-animation-delay: 8s
+          -moz-animation-delay: 8s
+          animation-delay: 8s
+
+        &:after
+          content: ''
+          position: absolute
+          width: 20px
+          height: 8px
+          background: #000
+          right: -15px
+          top: 20px
+          @include transform(rotateZ(-40deg))
+          opacity: 0
+          @include animation(arms 10s linear infinite)
+          -webkit-animation-delay: 8s
+          -moz-animation-delay: 8s
+          animation-delay: 8s
 
   .dude-shadow.two
     @include transform(translateX(-2px) rotateZ(-90deg) rotateY(90deg) rotateZ(50deg))
@@ -233,36 +321,42 @@ body
 @include keyframes(move-dude-one)
   0%
     @include transform(translate3D(514px, -10px, 375px) rotateY(78deg) scaleY(2))
-  1%, 22%
+  1%, 18%
     @include transform(translate3D(514px, 50px, 375px) rotateY(78deg) scaleY(1))
     opacity: 1
-  45%, 46.5%
+  34%, 39%
     @include transform(translate3D(284px, 40px, 375px) rotateY(78deg))
     opacity: 1
-  50%, 99%
+  41%, 42%
     @include transform(translate3D(234px, 40px, 375px) rotateY(78deg))
     opacity: 1
-  100%
+  43%, 100%
+    @include transform(translate3D(234px, 40px, 375px) rotateY(78deg))
     opacity: 0
 
 @include keyframes(move-dude-two)
-  0%
+  0%, 42%
+    @include transform(translate3D(610px, 40px, 10px) rotateY(15deg))
+    opacity: 0
+  42.5%
     @include transform(translate3D(610px, 40px, 10px) rotateY(15deg))
     display: block
     opacity: 1
-  6%, 35%
+  46%, 75%
     @include transform(translate3D(610px, 40px, 120px) rotateY(15deg))
     opacity: 1
-  35%, 55%
-    @include transform(translate3D(610px, 40px, 120px) rotateY(15deg))
-    opacity: 1
-  56%, 57%
+  76%, 97%
     @include transform(translate3D(610px, -10px, 120px) rotateY(15deg) scaleY(2))
     opacity: 0
-  57%, 100%
+  98%, 100%
     @include transform(translate3D(610px, -10px, 120px) rotateY(15deg) scaleY(2))
     opacity: 0
 
+@include keyframes(arms)
+  0%, 53%
+    opacity: 0
+  54%, 100%
+    opacity: 1
 
 @include keyframes(show-background)
   0%
