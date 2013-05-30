@@ -5,7 +5,6 @@
 body
   background-color: #efe8dd
   @include background(linear-gradient(color-stops(#ced5d3, #ced5d3 144px, #efe8dd 144px, #efe8dd 100%)))
-  backround-repeat: no-repeat
   overflow: hidden
   font-family: Helvetica, Arial, Sans-serif
   letter-spacing: 2
@@ -47,7 +46,7 @@ body
   height: 500px
   position: relative
   margin: 20px auto 0 auto
-  @include perspective(2600px)
+  @include perspective(3000px)
   @include perspective-origin(50% -1400px)
 
 .stage
@@ -212,7 +211,7 @@ body
     &.red
       @include background(radial-gradient(black, black 50%, #ff4640 70%))
       border: 7px solid #ff4640
-      @include transform(translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg))
+      @include transform(translate3D(223px, 25px, 385px) rotateY(90deg) skewX(5deg))
       @include animation(show-red-portal 1s forwards)
       -webkit-animation-delay: 5s
       -moz-animation-delay: 5s
@@ -388,11 +387,11 @@ body
 
 @include keyframes(show-red-portal)
   0%
-    @include transform(translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg) scale(0))
+    @include transform(translate3D(223px, 25px, 385px) rotateY(90deg) skewX(5deg) scale(0))
   5%
     opacity: 1
   100%
-    @include transform(translate3D(223px, 30px, 385px) rotateY(90deg) skewX(5deg) scale(1))
+    @include transform(translate3D(223px, 25px, 385px) rotateY(90deg) skewX(5deg) scale(1))
     opacity: 1
 
 @include keyframes(show-blue-portal)
