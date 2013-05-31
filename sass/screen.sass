@@ -237,7 +237,7 @@ body
 
       &.head
         top: 0
-        left: 5px
+        left: 3px
         width: 20px
         height: 20px
         @include border-radius(22px)
@@ -271,7 +271,7 @@ body
     @include transform(translate3D(514px, 50px, 375px) rotateY(78deg))
 
   .dude-shadow.one
-    @include transform(translateX(-12px) rotateX(90deg))
+    @include transform(translateX(-12px) rotateX(90deg) translateY(8px))
     opacity: 0.1
 
   .dude.two
@@ -290,7 +290,7 @@ body
         width: 20px
         height: 8px
         background: #000
-        left: -14px
+        left: -13px
         top: 20px
         @include transform(rotateZ(40deg))
         opacity: 0
@@ -304,7 +304,7 @@ body
         width: 20px
         height: 8px
         background: #000
-        right: -12px
+        right: -10px
         top: 20px
         @include transform(rotateZ(-40deg))
         opacity: 0
@@ -314,7 +314,7 @@ body
         animation-delay: 8s
 
   .dude-shadow.two
-    @include transform(translateX(-2px) rotateZ(-90deg) rotateY(90deg) rotateZ(50deg))
+    @include transform(translateY(12px) translateX(-16px) translateZ(-6px) rotateZ(-90deg) rotateY(90deg) rotateZ(50deg) skewX(30deg) scaleX(0.8))
     opacity: 0.1
 
 @include keyframes(move-dude-one)
