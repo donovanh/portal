@@ -107,7 +107,18 @@ body {
     width: 150px;
     height: 100px;
     font-size: 14px;
-    letter-spacing: 1.2; }
+    letter-spacing: 1.2;
+    opacity: 0.4;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s; }
+    body .info:hover {
+      opacity: 0.8;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
     body .info .addthis_toolbox a {
       float: left;
       padding: 10px 0 0 5px; }
@@ -115,9 +126,7 @@ body {
       clear: both;
       padding: 14px 0 5px; }
       body .info p a {
-        text-decoration: none;
-        color: #ff1c7c;
-        font-weight: bold; }
+        text-decoration: none; }
 
 .container {
   width: 960px;
